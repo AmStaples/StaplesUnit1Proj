@@ -1,8 +1,17 @@
-﻿@{
+﻿@model Wordle
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>
+        <form asp-action = "Index" method="post">
+            <br/>1:<input asp-for="slot1"/>
+            <br/>1:<input asp-for="slot2" />
+            <br/>1:<input asp-for="slot3" />
+            <br/>1:<input asp-for="slot4" />
+            <br/>1:<input asp-for="slot5" />
+        </form>
+    </p>
 </div>
