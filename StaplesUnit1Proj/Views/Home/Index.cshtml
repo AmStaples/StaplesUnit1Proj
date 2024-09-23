@@ -1,14 +1,17 @@
 ﻿@model Wordle
-
 @{
     ViewData["Title"] = "Wordle";
 }
 
 <div class="text-center">
     <p>
+        <h1>WORDLE</h1>
         <form asp-action = "Index" method="post">
-            <br/>Enter Word:<input asp-for="input"/>
-            <p> 1:@ViewBag.s1  2:@ViewBag.s2 3:@ViewBag.s3 4.@ViewBag.s4 5:@ViewBag.s5</p>
+            <br/>
+            <label asp-for="input">Input Word</label>
+            <input asp-for="input"/>
+            <p> 1:@ViewBag.slot1   2:@ViewBag.slot2 3:@ViewBag.slot3 4.@ViewBag.slot4 5:@ViewBag.slot5</p>
+            <button type="submit">Enter</button>
         </form>
     </p>
 </div>
