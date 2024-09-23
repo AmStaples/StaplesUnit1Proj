@@ -8,9 +8,8 @@
         <h1>WORDLE</h1>
         <form asp-action = "Index" method="post">
             <br/>
-            <label asp-for="input">Input Word</label>
-            <input asp-for="input"/>
-            <p> 1:@ViewBag.slot1   2:@ViewBag.slot2 3:@ViewBag.slot3 4.@ViewBag.slot4 5:@ViewBag.slot5</p>
+            <label asp-for="answer">Input the answer</label>
+            <input asp-for="answer"/>
             <button type="submit">Enter</button>
         </form>
     </p>
