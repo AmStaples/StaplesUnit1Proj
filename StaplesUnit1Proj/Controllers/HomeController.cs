@@ -14,27 +14,29 @@ namespace StaplesUnit1Proj.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(Wordle w) 
+        public IActionResult Index(AnswerCourier Ac) 
         {
-            ViewBag.answerInput = w.answer;
-            return View("Game" , w);
+            
+            return View("Game");
         }
 
         [HttpGet]
-        public IActionResult Game(Wordle w)
+        public IActionResult Game()
         {
-            return View();
+            Wordle w = new Wordle();
+            w.answer = ViewBag.answerInput;
+            return View(w);
         }
 
         [HttpPost]
         public IActionResult Game(Wordle w)
         {
-
+            if (w.answer == "") { w.answer = "Faild"; };
             if (ModelState.IsValid)
             {
                 
                 w.CheckSlot();
-
+                
                 if (w.slot1status == 1) { ViewBag.slot1 = "Wrong Letter"; }
                 else if (w.slot1status == 2) { ViewBag.slot1 = "Wrong Spot"; }
                 else if (w.slot1status == 3) { ViewBag.slot1 = "Correct Letter"; }
